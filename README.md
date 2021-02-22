@@ -150,3 +150,7 @@ The same example from the Liskov Substitution Principle can be used because in t
         
         public class Remote extends BatteryOperatedDevices {}
         public class Phone extends Devices {}
+        
+        
+[![Coverage Status](https://coveralls.io/repos/github/vartika99/IS219-hw2/badge.svg?branch=master)](https://coveralls.io/github/vartika99/IS219-hw2?branch=master)
+[![Build Status](https://travis-ci.org/vartika99/IS219-hw2.svg?branch=master)](https://travis-ci.org/vartika99/IS219-hw2)
