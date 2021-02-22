@@ -20,17 +20,14 @@ This example allows you to get the color of the object without having to modify 
 *3. Liskov Substitution Principle:* functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.
 Not all devices run on cell batteries, like phones. Remotes run on batteries, which is why it falls under the subclass BatteryOperatedDevices().
 
-    public class Devices {
-    }   
+    public class Devices {}   
     public class BatteryOperatedDevices {
         public void batteries() {
         }
     }
     
-    public class Remote extends BatteryOperatedDevices {
-    }
-    public class Phone extends Devices {
-    }
+    public class Remote extends BatteryOperatedDevices {}
+    public class Phone extends Devices {}
     
 
 *4. Interface Segregation Principle:* you do not need to implement interfaces that you don't need or use in your code. 
