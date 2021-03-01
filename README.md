@@ -1,3 +1,45 @@
+**Design Patterns**
+
+*Builder:* allows you to create complex objects step by step.
+In a builder pattern, there is a base class that gets extend by adding subclasses for the parameters.
+The best way to fix the problem of having too many parameters is creating separate objects.
+
+    function Addition (a, b) {
+        return a + b;
+    }
+    module.exports = Addition;
+The Addition function allows the calculator to only add two numbers together.
+If you want the calculator to subtract as well, you would need to create a separate function for that operation. 
+
+*Decorator:* lets you attach behaviors to objects.
+The objects are in special wrapper objects that already contain the behaviors.
+
+    class Calculator {
+        static Calculations = [];
+    
+        static Addition(a,b) {
+            let calculation = Calculation.Create(a, b, Addition);
+            return calculation;
+        }
+    }
+The Calculator class has subclasses Calculations and Addition that each perform different tasks. 
+The Addition class lets you add two numbers together.
+
+*Strategy:* lets you put a family of algorithms into separate classes, and make their objects interchangeable.
+The original class, context, must include references to the strategies.
+
+    class City {
+        constructor(data = null) {
+            if(data) {
+                this.id = data.id;
+                this.city = data.city;
+            }
+        }
+    }
+Here, the City class would be the context. 
+The lines, this.id = data.id and this.city = data.city would be the strategies for the City class.
+
+
 **SOLID Principles**
 
 **1.** *Single Responsibility Principle:* a function should only do one thing. Some functions can be made into even smaller functions. 
