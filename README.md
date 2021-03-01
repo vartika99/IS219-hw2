@@ -28,16 +28,19 @@ The Addition class lets you add two numbers together.
 *Strategy:* lets you put a family of algorithms into separate classes, and make their objects interchangeable.
 The original class, context, must include references to the strategies.
 
-    class City {
-        constructor(data = null) {
-            if(data) {
-                this.id = data.id;
-                this.city = data.city;
-            }
+    Class Difference {
+        static Subtraction(a,b) {
+            let calculation = Calculation.Create(a, b, Subtraction);
+            return calculation;
         }
     }
-Here, the City class would be the context. 
-The lines, this.id = data.id and this.city = data.city would be the strategies for the City class.
+    
+    static Multiplication(a,b) {
+        let calculation = Calculation.Create(a, b, Multiplication);
+        return calculation;
+    }
+Here, there are two classes, Difference and Product.
+Their strategies would be the lines that allow the calculation to execute.
 
 
 **SOLID Principles**
