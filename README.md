@@ -35,9 +35,11 @@ The original class, context, must include references to the strategies.
         }
     }
     
-    static Multiplication(a,b) {
-        let calculation = Calculation.Create(a, b, Multiplication);
-        return calculation;
+    Class Product {
+        static Multiplication(a,b) {
+            let calculation = Calculation.Create(a, b, Multiplication);
+            return calculation;
+        }
     }
 Here, there are two classes, Difference and Product.
 Their strategies would be the lines that allow the calculation to execute.
