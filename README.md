@@ -28,7 +28,6 @@ The best way to fix the problem of having too many parameters is creating separa
             this.calculator.subtraction = subtraction;
             return this;
         }
-    
         build() {
             return this.calculator;
         }
