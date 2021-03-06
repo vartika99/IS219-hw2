@@ -4,12 +4,38 @@
 In a builder pattern, there is a base class that gets extend by adding subclasses for the parameters.
 The best way to fix the problem of having too many parameters is creating separate objects.
 
-    function Addition (a, b) {
-        return a + b;
+    class Calculation {
+        constructor(a, b) {
+            this.a = a;
+            this.b = b;
+            this.op = op;
+        }  
     }
-    module.exports = Addition;
-The Addition function allows the calculator to only add two numbers together.
-If you want the calculator to subtract as well, you would need to create a separate function for that operation. 
+    class Calculator {
+        constructor(operation) {
+            this.operation = operation;
+        }
+    }
+    class CalculatorBuilder {
+        constructor(operation) {
+            this.calculator = new Calculator(operation);
+        }
+        setSum(addition) {
+            this.calculator.addition = addition;
+            return this;
+        }
+        setDifference(subtraction) {
+            this.calculator.subtraction = subtraction;
+            return this;
+        }
+    
+        build() {
+            return this.calculator;
+        }
+    }
+    
+    let calculator = new CalculatorBuilder('Simple Operations').setSum('2', '4', op).setDifference('2', '4', op).build()
+Here, if you did not want to perform the difference operation, you would simply just remove that method from the last line of your code. 
 
 *Decorator:* lets you attach behaviors to objects.
 The objects are in special wrapper objects that already contain the behaviors.
