@@ -1,5 +1,7 @@
 **Design Patterns**
 
+***Creational***
+
 *Builder:* allows you to create complex objects step by step.
 In a builder pattern, there is a base class that gets extend by adding subclasses for the parameters.
 The best way to fix the problem of having too many parameters is creating separate objects.
@@ -36,39 +38,32 @@ The best way to fix the problem of having too many parameters is creating separa
     let calculator = new CalculatorBuilder('Simple Operations').setSum('2', '4', op).setDifference('2', '4', op).build()
 Here, if you did not want to perform the difference operation, you would simply just remove that method from the last line of your code. 
 
-*Decorator:* lets you attach behaviors to objects.
-The objects are in special wrapper objects that already contain the behaviors.
+***Structural***
 
-    class Calculator {
-        static Calculations = [];
-    
-        static Addition(a,b) {
-            let calculation = Calculation.Create(a, b, Addition);
-            return calculation;
-        }
+*Facade:* provides a cleaner and simplified interface by masking the complicated parts of the code.
+ 
+    Square(a, b) {
+        this.AddCalculation(new Calculation(a, b, Square));
+        return this.GetLastCalculation();
     }
-The Calculator class has subclasses Calculations and Addition that each perform different tasks. 
-The Addition class lets you add two numbers together.
+This creates a new calculation that performs the square function and returns the answer for that calculation.
+
+***Behavioral***
 
 *Strategy:* lets you put a family of algorithms into separate classes, and make their objects interchangeable.
 The original class, context, must include references to the strategies.
 
-    Class Difference {
-        static Subtraction(a,b) {
-            let calculation = Calculation.Create(a, b, Subtraction);
-            return calculation;
-        }
-    }
-    
-    Class Product {
-        static Multiplication(a,b) {
-            let calculation = Calculation.Create(a, b, Multiplication);
-            return calculation;
-        }
-    }
-Here, there are two classes, Difference and Product.
-Their strategies would be the lines that allow the calculation to execute.
-
+   class Calculation {
+       constructor(a, b, op) {
+           this.a = a;
+           this.b = b;
+           this.op = op;
+       }
+       GetResults() {
+           return this.op(this.a, this.b);
+       }
+   }
+Here, the GetResults() function references back to the variables that were defined in the Calculation class.
 
 **SOLID Principles**
 
