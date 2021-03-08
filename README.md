@@ -53,16 +53,16 @@ This creates a new calculation that performs the square function and returns the
 *Strategy:* lets you put a family of algorithms into separate classes, and make their objects interchangeable.
 The original class, context, must include references to the strategies.
 
-   class Calculation {
-       constructor(a, b, op) {
-           this.a = a;
-           this.b = b;
-           this.op = op;
-       }
-       GetResults() {
-           return this.op(this.a, this.b);
-       }
-   }
+    class Calculation {
+        constructor(a, b, op) {
+            this.a = a;
+            this.b = b;
+            this.op = op;
+        }
+        GetResults() {
+            return this.op(this.a, this.b);
+        }
+    }
 Here, the GetResults() function references back to the variables that were defined in the Calculation class.
 
 **SOLID Principles**
